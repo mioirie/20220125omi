@@ -17,6 +17,6 @@ class TestController extends Controller
     {
         $test = $request->content;
         $item = $test;
-        return view('index', $item);
+        return view('index', ['item' =>$item]);
     }
 }

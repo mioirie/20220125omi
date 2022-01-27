@@ -27,10 +27,10 @@
         @csrf
         <input type="timestamp" > -->
 
-        <th>{{$items}}</th>　<!-- 記述内容を反映 -->
+        <!-- <th>{{$items}}</th>　 記述内容を反映 -->
        <form action="/" method="POST">
         @csrf
-        <input type="string">
+        <td><input type="string"></td>
 
         <th><button class="btn btn-renew"> 更新 </button></th>
       <th><button class="btn btn-delete"> 削除 </button></th>
