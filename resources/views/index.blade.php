@@ -9,25 +9,46 @@
 <body>
   <div class="todolist">
     <h1 class="todolist_ttl">Todo List</h1>
-    <input name="todolist">
-    <button class="btn btn-submit"> 追加 </button>  
+    <form action="todo" method="post"> <!-- formタグで囲いtodoに対してpostリクエストを送信 -->
+      @csrf
+      <input type="content"> <!-- 入力した内容を送信 -->
+      <button class="btn btn-submit" type="submit"> 追加 </button>  
+    </form>    
   </div>
 
-  <table class="todotable">
+ 
+<!-- 以下、サンプルコード -->
+    <table class="todotable">
     <tr>
       <th>作成日</th>
       <th>タスク名</th>
       <th>更新</th>
       <th>削除</th>
     </tr>
-    
+    @foreach
     <tr>
-      <th>{{$items}}</th> <!-- 作成日を反映 -->
+       <form action="/" method="POST">
+        @csrf
+        <td><input type="string"></td>
+        <th><button class="btn btn-renew"> 更新 </button></th>
+       </form>
+       <form action="">
+          @csrf
+         <th><button class="btn btn-delete"> 削除 </button></th>
+       </form>
+    </tr>
+    @endforeach
+ </table>
+
+<!-- 以前の記述
+    <tr>
+      <th>{{$items}}</th>  作成日を反映 -->
       <!-- <form action="/" method="POST">
         @csrf
         <input type="timestamp" > -->
 
         <!-- <th>{{$items}}</th>　 記述内容を反映 -->
+<!--
        <form action="/" method="POST">
         @csrf
         <td><input type="string"></td>
@@ -38,5 +59,7 @@
     </tr>
 
  </table>
+-->
+
 </body>
 </html>

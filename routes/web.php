@@ -16,4 +16,6 @@ use App\Http\Controllers\TestController;
 Route::get('/', function () {return view('welcome');});
 Route::get('/', [TestController::class, 'index']);
 Route::post('/', [TestController::class, 'post']);
+Route::post('/todo', [TestController::class, 'createTodo']); /*　Todoの追加処理　20220127　*/
+
 
