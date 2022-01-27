@@ -21,7 +21,7 @@ class Test extends Model
     public function getDetail()
     {
     //*    $txt = 'ID:'.$this->id . ' ' . $this->name . '(' . $this->age .  '才'.') '.$this->nationality;
-    //*    return $txt; *//
+    //*    return $txt; *//　この2行はテキストの内容
 
         $txt = $this->created_at . $this->content;
         return $txt;

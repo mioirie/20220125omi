@@ -13,4 +13,16 @@ class TestController extends Controller
         Test::create($form);
         return redirect('/'); // web.phpのRoute::get('/', [TestController::class, 'index']);に対してアクセス
     }
+
+      public function index()
+    {
+        $txt = Test::find($id)->getDetail(); // $this->created_at . $this->content
+    }
+
+    public function post(Request $request)
+    {
+        $test = $request->content;
+        $item = $test;
+        return view('index', ['item' =>$item]);
+    }
 }

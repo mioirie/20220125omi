@@ -25,7 +25,7 @@
       <th>更新</th>
       <th>削除</th>
     </tr>
-    @foreach
+    @foreach($items as $item)
     <tr>
        <form action="/" method="POST">
         @csrf
