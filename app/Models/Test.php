@@ -7,5 +7,9 @@ use Illuminate\Database\Eloquent\Model;
 
 class Test extends Model
 {
-    use HasFactory;
+    public function getDetail()
+    {
+        $txt = 'ID:'.$this->id . ' ' . $this->name . '(' . $this->age .  '才'.') '.$this->nationality;
+        return $txt;
+    }
 }

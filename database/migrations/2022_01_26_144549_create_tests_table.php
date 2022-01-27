@@ -18,7 +18,6 @@ class CreateTestsTable extends Migration
 	        $table->string('content', 191);
             $table->timestamp('created_at')->useCurrent()->nullable();
        	    $table->timestamp('updated_at')->useCurrent()->nullable();
-
         });
     }
 
