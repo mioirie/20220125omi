@@ -11,7 +11,7 @@
     <h1 class="todolist_ttl">Todo List</h1>
     <form action="todo" method="post"> <!-- formタグで囲いtodoに対してpostリクエストを送信 -->
       @csrf
-      <input type="content"> <!-- 入力した内容を送信 -->
+      <input type="text" name="content"> <!-- 入力した内容を送信 -->
       <button class="btn btn-submit" type="submit"> 追加 </button>  
     </form>    
   </div>
@@ -25,11 +25,12 @@
       <th>更新</th>
       <th>削除</th>
     </tr>
-    @foreach($items as $item)
+     @foreach($items as $item)  
+<!-- <p>{{$item}}</p> -->
     <tr>
-       <form action="/" method="POST">
+        <th>{{$item->created_at}}</th>
         @csrf
-        <td><input type="string"></td>
+        <th><input type="string" name="content" value={{$item->content}} ></th>
         <th><button class="btn btn-renew"> 更新 </button></th>
        </form>
        <form action="">

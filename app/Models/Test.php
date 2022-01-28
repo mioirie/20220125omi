@@ -18,12 +18,9 @@ class Test extends Model
         'updated_id' =>'',
     );
 
-    public function getDetail()
+    public function index()
     {
-    //*    $txt = 'ID:'.$this->id . ' ' . $this->name . '(' . $this->age .  '才'.') '.$this->nationality;
-    //*    return $txt; *//　この2行はテキストの内容
-
-        $txt = $this->created_at . $this->content;
-        return $txt;
+        $items = Test::all();
+        return view('index', ['items' =>$items]);
     }
 }
