@@ -16,30 +16,36 @@
     </form>    
   </div>
 
- 
 <!-- 以下、サンプルコード -->
-    <table class="todotable">
+<table class="todotable">
     <tr>
       <th>作成日</th>
       <th>タスク名</th>
       <th>更新</th>
       <th>削除</th>
     </tr>
+
      @foreach($items as $item)  
 <!-- <p>{{$item}}</p> -->
-    <tr>
-        <th>{{$item->created_at}}</th>
+<tr>
+ 	<th>{{$item->created_at}}</th>
         @csrf
-        <th><input type="string" name="content" value={{$item->content}} ></th>
-        <th><button class="btn btn-renew"> 更新 </button></th>
-       </form>
-       <form action="">
+	<th><input type="string" name="content" value={{$item->content}} ></th>
+
+<!-- ここから下、更新ボタンの作動を作成 -->
+
+  <form action="/todo/update" method="update"> <!-- todoに対してupdateリクエストを送信 -->
+      @csrf
+      <th><button class="btn btn-update"> 更新 </button></th>
+
+
+
           @csrf
          <th><button class="btn btn-delete"> 削除 </button></th>
-       </form>
-    </tr>
+  </form>
+</tr>
     @endforeach
- </table>
+</table>
 
 <!-- 以前の記述
     <tr>
