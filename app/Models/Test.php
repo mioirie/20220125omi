@@ -23,4 +23,6 @@ class Test extends Model
         $items = Test::all();
         return view('index', ['items' =>$items]);
     }
+
+    
 }
