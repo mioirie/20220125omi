@@ -17,6 +17,10 @@ Route::get('/', function () {return view('welcome');});
 Route::get('/', [TestController::class, 'index']);
 Route::post('/', [TestController::class, 'post']);
 Route::post('/todo', [TestController::class, 'createTodo']); /*　Todoの追加処理　20220127　*/
-Route::get('/todo/update', [TestController::class, 'updateTodo']); 
-Route::post('/todo/update', [TestController::class, 'updateTodo']); 
+Route::get('/todo/update', [TestController::class, 'updateTodo']);
+Route::post('/todo/update', [TestController::class, 'updateTodo']);
 
+/*ここから下　追加　20220131*/
+Route::get('/', [App\Http\Controllers\TestController::class, 'index'])->name('update');
+Route::get('/todo/update', [App\Http\Controllers\TestController::class, 'updateTodo'])->name('data.show');
+Route::post('/todo/update', [App\Http\Controllers\TestController::class, 'updateTodo'])->name('data.create');
