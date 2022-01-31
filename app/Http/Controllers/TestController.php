@@ -26,10 +26,11 @@ class TestController extends Controller
     public function updateTodo(Request $request)
     {
         $this->validate($request, Test::$rules);
+          dd($request->content);
         $form = $request->except(['_token']); // 送信されたデータを連想配列に直す['contact' => inputタグに入力した値]
-        //Test::update($form); //
-        Test::where('content',$request->content)->update($form);//この行を付け加えました　20220130//
-        return redirect('/todo/update');
+        //Test::update($form);//
+        Test::where('id',$request->id)->update($request);//この行を付け加えました　20220130//
+        return redirect('/');
         // →web.phpのRoute::get('/todo/update', [TestController::class, 'index']);に対してアクセス
     }
 

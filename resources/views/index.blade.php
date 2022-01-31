@@ -13,7 +13,7 @@
       @csrf
       <input type="text" name="content"> <!-- 入力した内容を送信 -->
       <button class="btn btn-submit" type="submit"> 追加 </button>  
-    </form>    
+        
   </div>
 
 <!-- 以下、サンプルコード -->
@@ -26,7 +26,7 @@
     </tr>
 
      @foreach($items as $item)  
-<!-- <p>{{$item}}</p> -->
+ <p>{{$item}}</p> 
 <tr>
  	<th>{{$item->created_at}}</th>
         @csrf
@@ -34,7 +34,9 @@
 
 <!-- ここから下、更新ボタンの作動を作成 -->
 
-  <form action="/todo/update" method="update"> <!-- todoに対してupdateリクエストを送信 -->
+
+
+  <form action="/todo/update" method="update"> <!-- todo/updateに対してupdateリクエストを送信 -->
       @csrf
       <th><button class="btn btn-update"> 更新 </button></th>
 
@@ -46,6 +48,7 @@
 </tr>
     @endforeach
 </table>
+</form>
 
 <!-- 以前の記述
     <tr>
