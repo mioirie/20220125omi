@@ -34,7 +34,7 @@
 
 <!-- ここから下、更新ボタンの作動を作成 -->
 <!--  <form action="/todo/update" method="update"> --> <!-- todo/updateに対してupdateリクエストを送信 ※いったんコメントアウトします -->
-  <form method="post" action="{{ route('data.create', ['id' => 1]) }}">  <!-- 20220131追加 -->
+  <form method="post" action="{{ route('update', ['id' => $item->id]) }}">  <!-- 20220131追加 -->
    <th><input type="string" name="content" value={{$item->content}} ></th> <!-- 20220131追加 -->
       @csrf
       <th><button class="btn btn-update"> 更新 </button></th>
