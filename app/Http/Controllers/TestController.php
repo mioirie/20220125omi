@@ -27,11 +27,9 @@ class TestController extends Controller
         $this->validate($request, Test::$rules);
         //dd($request->content);//
         $form = $request->except(['_token']);// 送信されたデータを連想配列に直す['contact' => inputタグに入力した値]//
-        Test::where('id',$request->id)->get($request);//20220130追加//
+        Test::where('id',$request->id)->update($form);//20220130追加//
         return redirect('/');
 
-        $form = $request->except(['_token']);
-        Test::where('id',$request->id)->get($request);
-        return redirect('/');
+
     }
 }

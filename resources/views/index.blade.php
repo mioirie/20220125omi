@@ -30,7 +30,7 @@
 <tr>
  	<th>{{$item->created_at}}</th>
         @csrf
-	<th><input type="string" name="content" value={{$item->content}} ></th>
+	<!--<th><input type="string" name="content" value={{$item->content}} ></th> -->
 
 <!-- ここから下、更新ボタンの作動を作成 -->
 <!--  <form action="/todo/update" method="update"> --> <!-- todo/updateに対してupdateリクエストを送信 ※いったんコメントアウトします -->
