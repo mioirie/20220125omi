@@ -19,4 +19,5 @@ Route::post('/', [TestController::class, 'post']);
 Route::post('/todo', [TestController::class, 'createTodo'])->name('create'); /*　Todoの追加処理　20220127　name～の追加　20220131　*/
 Route::get('/todo/update', [TestController::class, 'updateTodo']);
 Route::post('/todo/update', [TestController::class, 'updateTodo'])->name('update');/*name～の追加　20220131　*/
-
+Route::get('/todo/delete', [TestController::class, 'deleteTodo']);
+Route::post('/todo/delete', [TestController::class, 'deleteTodo'])->name('delete');
